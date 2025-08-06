@@ -29,7 +29,8 @@ function App() {
 
   if (isLoading || !landingData) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900">
+      <div className="min-h-screen flex items-center justify-center bg-gray-950" 
+           style={{ background: `linear-gradient(135deg, #1a1a2e, #16213e, #0f3460), linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%)` }}>
         <div className="text-white text-xl">Loading ultaCoin...</div>
       </div>
     );
@@ -194,14 +195,14 @@ function App() {
 
   return (
     <div 
-      className="min-h-screen"
+      className="min-h-screen bg-gray-950"
       style={{ 
         fontFamily: branding.font_family,
-        background: `linear-gradient(135deg, ${primaryColor}10, ${secondaryColor}20, ${accentColor}10)`
+        background: `linear-gradient(135deg, ${primaryColor}40, ${secondaryColor}60, ${accentColor}40), linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%)`
       }}
     >
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/10 backdrop-blur-md border-b border-white/20 z-50">
+      <nav className="fixed top-0 w-full bg-black/80 backdrop-blur-md border-b border-white/10 z-50">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-2">
             {branding.logo_url ? (
@@ -255,7 +256,7 @@ function App() {
             <Button 
               size="lg" 
               variant="outline" 
-              className="text-white border-white hover:bg-white hover:text-black transition-colors px-8 py-4 text-lg"
+              className="text-white border-gray-400 hover:bg-gray-800 hover:text-white hover:border-gray-300 transition-colors px-8 py-4 text-lg"
             >
               Read Whitepaper
             </Button>
@@ -276,12 +277,12 @@ function App() {
       </section>
 
       {/* Key Features Section */}
-      <section id="features" className="py-20 px-4 bg-white/5">
+      <section id="features" className="py-20 px-4 bg-black/40 backdrop-blur-sm">
         <div className="container mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16">Key Features</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {keyFeatures.map((feature, index) => (
-              <Card key={index} className="bg-white/10 border-white/20 hover:bg-white/15 transition-colors">
+              <Card key={index} className="bg-gray-900/80 border-gray-700/50 hover:bg-gray-800/90 transition-colors backdrop-blur-sm">
                 <CardHeader>
                   <CardTitle className="text-white text-xl">{feature.title}</CardTitle>
                 </CardHeader>
@@ -307,7 +308,7 @@ function App() {
           )}
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <Card className="bg-white/10 border-white/20">
+              <Card className="bg-gray-900/90 border-gray-700/50 backdrop-blur-sm">
                 <CardHeader>
                   <CardTitle className="text-white">Token Metrics</CardTitle>
                 </CardHeader>
@@ -320,7 +321,7 @@ function App() {
                   ))}
                 </CardContent>
               </Card>
-              <Card className="bg-white/10 border-white/20">
+              <Card className="bg-gray-900/90 border-gray-700/50 backdrop-blur-sm">
                 <CardHeader>
                   <CardTitle className="text-white">Distribution</CardTitle>
                 </CardHeader>
@@ -339,7 +340,7 @@ function App() {
       </section>
 
       {/* Roadmap Section */}
-      <section id="roadmap" className="py-20 px-4 bg-white/5">
+      <section id="roadmap" className="py-20 px-4 bg-black/40 backdrop-blur-sm">
         <div className="container mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16">Roadmap</h2>
           <div className="max-w-4xl mx-auto">
@@ -357,7 +358,7 @@ function App() {
                       }`}
                     />
                     {index < displayRoadmapItems.length - 1 && (
-                      <div className="w-px h-16 bg-white/20 mt-2" />
+                      <div className="w-px h-16 bg-gray-600/60 mt-2" />
                     )}
                   </div>
                   <div className="flex-1">
@@ -392,7 +393,7 @@ function App() {
           <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16">Our Team</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {displayTeamMembers.map((member) => (
-              <Card key={member.id} className="bg-white/10 border-white/20 hover:bg-white/15 transition-colors">
+              <Card key={member.id} className="bg-gray-900/80 border-gray-700/50 hover:bg-gray-800/90 transition-colors backdrop-blur-sm">
                 <CardHeader className="text-center">
                   {member.image_url ? (
                     <img 
@@ -401,7 +402,7 @@ function App() {
                       className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
                     />
                   ) : (
-                    <div className="w-24 h-24 bg-white/20 rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <div className="w-24 h-24 bg-gray-800/80 rounded-full mx-auto mb-4 flex items-center justify-center border border-gray-700/50">
                       <span className="text-2xl text-white font-bold">
                         {member.name.split(' ').map(n => n[0]).join('')}
                       </span>
@@ -442,18 +443,18 @@ function App() {
       </section>
 
       {/* How to Buy Section */}
-      <section id="buy" className="py-20 px-4 bg-white/5">
+      <section id="buy" className="py-20 px-4 bg-black/40 backdrop-blur-sm">
         <div className="container mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16">How to Buy {branding.coin_symbol}</h2>
           <div className="max-w-4xl mx-auto">
             <Tabs defaultValue="exchange" className="w-full">
-              <TabsList className="grid w-full grid-cols-3 bg-white/10">
-                <TabsTrigger value="exchange" className="text-white data-[state=active]:bg-white/20">Exchanges</TabsTrigger>
-                <TabsTrigger value="wallet" className="text-white data-[state=active]:bg-white/20">Wallet</TabsTrigger>
-                <TabsTrigger value="defi" className="text-white data-[state=active]:bg-white/20">DeFi</TabsTrigger>
+              <TabsList className="grid w-full grid-cols-3 bg-gray-900/80 border border-gray-700/50">
+                <TabsTrigger value="exchange" className="text-white data-[state=active]:bg-gray-800/90 data-[state=active]:border-gray-600">Exchanges</TabsTrigger>
+                <TabsTrigger value="wallet" className="text-white data-[state=active]:bg-gray-800/90 data-[state=active]:border-gray-600">Wallet</TabsTrigger>
+                <TabsTrigger value="defi" className="text-white data-[state=active]:bg-gray-800/90 data-[state=active]:border-gray-600">DeFi</TabsTrigger>
               </TabsList>
               <TabsContent value="exchange" className="space-y-6 mt-8">
-                <Card className="bg-white/10 border-white/20">
+                <Card className="bg-gray-900/90 border-gray-700/50 backdrop-blur-sm">
                   <CardHeader>
                     <CardTitle className="text-white">Centralized Exchanges</CardTitle>
                   </CardHeader>
@@ -464,7 +465,7 @@ function App() {
                         <Button 
                           key={exchange}
                           variant="outline" 
-                          className="text-white border-white/40 hover:bg-white hover:text-black"
+                          className="text-white border-gray-600 hover:bg-gray-700 hover:text-white hover:border-gray-500"
                         >
                           {exchange}
                         </Button>
@@ -474,7 +475,7 @@ function App() {
                 </Card>
               </TabsContent>
               <TabsContent value="wallet" className="space-y-6 mt-8">
-                <Card className="bg-white/10 border-white/20">
+                <Card className="bg-gray-900/90 border-gray-700/50 backdrop-blur-sm">
                   <CardHeader>
                     <CardTitle className="text-white">Supported Wallets</CardTitle>
                   </CardHeader>
@@ -485,7 +486,7 @@ function App() {
                         <Button 
                           key={wallet}
                           variant="outline" 
-                          className="text-white border-white/40 hover:bg-white hover:text-black"
+                          className="text-white border-gray-600 hover:bg-gray-700 hover:text-white hover:border-gray-500"
                         >
                           {wallet}
                         </Button>
@@ -495,7 +496,7 @@ function App() {
                 </Card>
               </TabsContent>
               <TabsContent value="defi" className="space-y-6 mt-8">
-                <Card className="bg-white/10 border-white/20">
+                <Card className="bg-gray-900/90 border-gray-700/50 backdrop-blur-sm">
                   <CardHeader>
                     <CardTitle className="text-white">DeFi Platforms</CardTitle>
                   </CardHeader>
@@ -506,7 +507,7 @@ function App() {
                         <Button 
                           key={platform}
                           variant="outline" 
-                          className="text-white border-white/40 hover:bg-white hover:text-black"
+                          className="text-white border-gray-600 hover:bg-gray-700 hover:text-white hover:border-gray-500"
                         >
                           {platform}
                         </Button>
@@ -521,7 +522,7 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-4 border-t border-white/20">
+      <footer className="py-12 px-4 border-t border-gray-700/50 bg-black/30 backdrop-blur-sm">
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">
